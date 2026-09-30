@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basma Azeem | Math & AI Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        sage: '#a3b18a',
+                        rose: '#d4a5a5',
+                        charcoal: '#121110',
+                        cream: '#fafaf9',
+                    }
+                }
+            }
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        }
+
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; transition: background-color 0.4s, color 0.4s; scroll-behavior: smooth; }
+        .gradient-text {
+            background: linear-gradient(90deg, #a3b18a, #d4a5a5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            transition: all 0.4s ease;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .light .glass-card {
+            background: white;
+            border: 2px solid #a3b18a; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .glass-card:hover { transform: translateY(-8px); border-color: #d4a5a5; }
+    </style>
+</head>
+<body class="bg-cream text-stone-800 dark:bg-charcoal dark:text-stone-200">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-cream/80 dark:bg-charcoal/80 backdrop-blur-md border-b border-stone-200 dark:border-white/5">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-xl font-extrabold tracking-tighter uppercase">Basma Azeem<span class="text-sage">.</span></span>
+            <div class="flex items-center gap-6">
+                <div class="hidden md:flex gap-8 text-xs font-semibold uppercase tracking-widest">
+                    <a href="#work" class="hover:text-rose transition font-bold">Experience</a>
+                    <a href="#projects" class="hover:text-sage transition font-bold">Projects</a>
+                    <a href="#involvement" class="hover:text-rose transition font-bold">Involvement</a>
+                </div>
+                <button onclick="toggleTheme()" class="p-2 rounded-full bg-stone-200 dark:bg-white/10 text-stone-800 dark:text-sage hover:scale-110 transition border border-stone-300 dark:border-transparent">
+                    <i class="fas fa-circle-half-stroke text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="min-h-[95vh] flex items-center px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-rose font-bold tracking-widest mb-4 uppercase text-sm">Mathematics + AI Systems</h2>
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-8 leading-tight dark:text-white">
+                Designing <span class="gradient-text">Reliable</span> <br/>AI Frameworks.
+            </h1>
+            <p class="text-xl text-stone-500 dark:text-stone-400 max-w-2xl leading-relaxed mb-10">
+                BSc. Candidate at <b>Queen's University</b>. Solving technical challenges through the intersection of <b>Applied Mathematics</b> and <b>Data Analysis</b>.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="https://linkedin.com/in/basmaazeem" target="_blank" class="bg-stone-900 text-white dark:bg-sage dark:text-charcoal font-bold px-10 py-4 rounded-full transition hover:opacity-90 shadow-lg flex items-center gap-2">
+                    <i class="fab fa-linkedin text-xl"></i> LinkedIn
+                </a>
+                <a href="mailto:basma.azeem@queensu.ca" class="border-2 border-sage text-stone-800 dark:text-sage dark:border-white/10 px-10 py-4 rounded-full font-bold hover:bg-sage hover:text-white transition">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section id="projects" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold mb-16 flex items-center gap-4 italic uppercase tracking-tighter">
+                <span class="text-sage">01.</span> Projects & Research
+            </h3>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- ScamBench -->
+                <a href="https://qmind.ca" target="_blank" class="glass-card p-10 rounded-3xl block group">
+                    <div class="flex justify-between items-start mb-8 text-rose">
+                        <div class="p-3 bg-rose/10 rounded-2xl"><i class="fas fa-user-secret text-2xl"></i></div>
+                        <div class="flex flex-col items-end gap-2">
+                            <i class="fas fa-arrow-up-right-from-square transition group-hover:scale-125 text-xl"></i>
+                            <span class="text-[9px] font-bold uppercase tracking-widest bg-rose text-white dark:text-charcoal px-2 py-1 rounded shadow-sm">Current Project</span>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-1 dark:text-white group-hover:text-rose transition">ScamBench: AI Recruitment Phishing</h4>
+                    <p class="text-rose text-[10px] font-bold uppercase tracking-widest mb-4">Project Manager</p>
+                    <p class="text-stone-500 dark:text-stone-400 text-sm mb-6 leading-relaxed">Leading as <b>Project Manager</b> for a safety benchmark quantifying open-source AI criminal enablement risks in recruitment environments.</p>
+                    <div class="flex gap-2">
+                        <span class="text-[10px] font-bold uppercase tracking-widest px-2 py-1 bg-rose/10 text-rose rounded">AI Safety</span>
+                    </div>
+                </a>
+
+                <!-- GMO -->
+                <a href="https://github.com/basma-azeem/gmo" target="_blank" class="glass-card p-10 rounded-3xl block group">
+                    <div class="flex justify-between items-start mb-8 text-sage">
+                        <div class="p-3 bg-sage/10 rounded-2xl"><i class="fas fa-shield-alt text-2xl"></i></div>
+                        <i class="fas fa-arrow-up-right-from-square transition group-hover:scale-125 text-xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4 dark:text-white group-hover:text-sage transition">GMO (Get Me Out)</h4>
+                    <p class="text-stone-500 dark:text-stone-400 text-sm mb-6 leading-relaxed">Safety app using <b>Vosk</b> for offline processing. Awarded 3rd place at <b>2026 QWIC HackHer</b>.</p>
+                    <div class="flex gap-2">
+                        <span class="text-[10px] font-bold uppercase tracking-widest px-2 py-1 bg-sage/10 text-sage rounded border border-sage/20">Python</span>
+                    </div>
+                </a>
+
+                <!-- ROM-io -->
+                <a href="#" target="_blank" class="glass-card p-10 rounded-3xl block group">
+                    <div class="flex justify-between items-start mb-8 text-stone-400">
+                        <div class="p-3 bg-stone-100 dark:bg-white/10 rounded-2xl"><i class="fas fa-running text-2xl"></i></div>
+                        <i class="fas fa-link transition group-hover:text-rose text-xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4 dark:text-white group-hover:text-stone-400 transition">ROM-io</h4>
+                    <p class="text-stone-500 dark:text-stone-400 text-sm mb-6 leading-relaxed">Computer vision application tracking shoulder range of motion via markerless pose estimation.</p>
+                    <div class="flex gap-2 text-stone-400 font-bold">
+                        <span class="text-[10px] uppercase tracking-widest border border-stone-200 px-2 rounded">CV</span>
+                        <span class="text-[10px] uppercase tracking-widest border border-stone-200 px-2 rounded">Meyda.js</span>
+                    </div>
+                </a>
+
+                <!-- educ-AI-tion -->
+                <a href="#" target="_blank" class="glass-card p-10 rounded-3xl block group">
+                    <div class="flex justify-between items-start mb-8 text-rose">
+                        <div class="p-3 bg-rose/10 rounded-2xl"><i class="fas fa-file-alt text-2xl"></i></div>
+                        <i class="fas fa-file-pdf transition group-hover:scale-110 text-xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4 dark:text-white group-hover:text-rose transition">educ-AI-tion Paper</h4>
+                    <p class="text-stone-500 dark:text-stone-400 text-sm mb-6 leading-relaxed">Co-authored research on data tracking frameworks and AI integration in higher education.</p>
+                    <div class="flex gap-2 text-rose font-bold">
+                        <span class="text-[10px] uppercase tracking-widest border border-rose/30 px-2 rounded">Research</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="work" class="py-24 px-6 bg-stone-100 dark:bg-white/[0.01]">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl font-bold mb-16 flex items-center gap-4 italic uppercase tracking-tighter">
+                <span class="text-rose">02.</span> Professional Journey
+            </h3>
+
+            <div class="space-y-16">
+                <!-- Presto -->
+                <div class="relative pl-12 border-l-2 border-sage/40">
+                    <div class="absolute -left-[11px] top-0 w-5 h-5 bg-sage rounded-full"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold">Business Analyst Intern</h4>
+                        <span class="text-stone-400 font-mono text-sm">2026 — Present</span>
+                    </div>
+                    <p class="text-rose font-bold mb-4">Presto Phoenix Inc.</p>
+                    <ul class="text-stone-500 dark:text-stone-400 space-y-2 list-disc list-inside text-sm">
+                        <li>Evaluating voice AI accuracy and upsell metrics to surface actionable product insights.</li>
+                        <li>Identifying ordering patterns and anomalies across drive-thru environments.</li>
+                    </ul>
+                </div>
+
+                <!-- Sunny Days -->
+                <div class="relative pl-12 border-l-2 border-rose/40">
+                    <div class="absolute -left-[11px] top-0 w-5 h-5 bg-rose rounded-full"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold">Data Analysis/Programmer</h4>
+                        <span class="text-stone-400 font-mono text-sm">2026</span>
+                    </div>
+                    <p class="text-sage font-bold mb-4">Sunny Days Technology (flui.so)</p>
+                    <ul class="text-stone-500 dark:text-stone-400 space-y-2 list-disc list-inside text-sm">
+                        <li>Co-developed AI speech tools using <b>Meyda.js</b> for audio feature extraction.</li>
+                        <li>Quantified performance metrics by testing pipelines across user speech data arrays.</li>
+                    </ul>
+                </div>
+
+                <!-- CRC -->
+                <div class="relative pl-12 border-l-2 border-stone-300 dark:border-white/10">
+                    <div class="absolute -left-[11px] top-0 w-5 h-5 bg-stone-300 dark:bg-stone-700 rounded-full"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold">Research Assistant</h4>
+                        <span class="text-stone-400 font-mono text-sm">2025</span>
+                    </div>
+                    <p class="text-dbrown dark:text-white font-bold mb-4">Queen's University CRC</p>
+                    <ul class="text-stone-500 dark:text-stone-400 space-y-2 list-disc list-inside text-sm leading-relaxed">
+                        <li>Engineered data pipelines to process academic survey data, reducing processing time.</li>
+                        <li>Built interactive visualizations in <b>Flourish</b> to communicate key research findings.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership -->
+    <section id="involvement" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold mb-16 flex items-center gap-4 italic uppercase tracking-tighter text-sage">
+                <span class="text-stone-400">03.</span> Leadership & Involvement
+            </h3>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 1. QMIND -->
+                <div class="glass-card p-10 rounded-3xl">
+                    <div class="text-rose mb-6 text-xl"><i class="fas fa-brain"></i></div>
+                    <h4 class="text-xl font-bold mb-2">QMIND</h4>
+                    <p class="text-sage text-[10px] font-bold uppercase tracking-widest mb-4 italic">Project Manager</p>
+                    <p class="text-stone-500 dark:text-stone-400 text-sm leading-relaxed">
+                        Leading teams for AI safety benchmarks and co-authoring research for Canada's largest undergraduate AI organization.
+                    </p>
+                </div>
+
+                <!-- 2. UX Club -->
+                <div class="glass-card p-10 rounded-3xl text-stone-100">
+                    <div class="text-stone-400 mb-6 text-xl"><i class="fas fa-pencil-ruler"></i></div>
+                    <h4 class="text-xl font-bold mb-2 dark:text-stone-100 text-stone-800">Queen's UX Club</h4>
+                    <p class="text-rose text-[10px] font-bold uppercase tracking-widest mb-4 italic">Director of Finance</p>
+                    <p class="text-stone-500 dark:text-stone-400 text-sm leading-relaxed">
+                        Responsible for <b>managing the club budget</b> and ensuring financial resources for design workshops and student events.
+                    </p>
+                </div>
+
+                <!-- 3. Math Stats DSC -->
+                <div class="glass-card p-10 rounded-3xl">
+                    <div class="text-sage mb-6 text-xl"><i class="fas fa-calculator"></i></div>
+                    <h4 class="text-xl font-bold mb-2">Math & Stats DSC</h4>
+                    <p class="text-stone-400 text-[10px] font-bold uppercase tracking-widest mb-4 italic">Vice-President (External)</p>
+                    <p class="text-stone-500 dark:text-stone-400 text-sm leading-relaxed">
+                        Leading external relations and building partnerships for the Mathematics and Statistics Departmental Student Council.
+                    </p>
+                </div>
+
+                <!-- 4. Taekwondo -->
+                <div class="glass-card p-10 rounded-3xl">
+                    <div class="text-rose mb-6 text-xl"><i class="fas fa-khanda"></i></div>
+                    <h4 class="text-xl font-bold mb-2">Taekwondo Club</h4>
+                    <p class="text-sage text-[10px] font-bold uppercase tracking-widest mb-4 italic">President</p>
+                    <p class="text-stone-500 dark:text-stone-400 text-sm leading-relaxed">
+                        Overseeing logistics and training for 30+ members. Managing financial compliance via advanced Excel tracking.
+                    </p>
+                </div>
+
+                <!-- 5. Graph Theory -->
+                <div class="glass-card p-10 rounded-3xl">
+                    <div class="text-stone-400 mb-6 text-xl"><i class="fas fa-diagram-project"></i></div>
+                    <h4 class="text-2xl font-bold mb-2">Graph Theory Research</h4>
+                    <p class="text-rose text-[10px] font-bold uppercase tracking-widest mb-4 italic">Undergraduate Researcher</p>
+                    <p class="text-stone-500 dark:text-stone-400 text-sm leading-relaxed">
+                        Conducted modeling for simulation games under the supervision of <b>Dr. Erin Meger</b> at Queen's University.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Github removed as requested) -->
+    <footer class="py-20 text-center border-t border-stone-200 dark:border-white/5">
+        <p class="text-stone-400 text-xs tracking-[0.6em] uppercase mb-10">&copy; 2026 Basma Azeem</p>
+        <div class="flex justify-center gap-12">
+            <a href="https://linkedin.com/in/basmaazeem" target="_blank" class="text-stone-400 hover:text-rose text-3xl transition hover:scale-125"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:basma.azeem@queensu.ca" class="text-stone-400 hover:text-sage text-3xl transition hover:scale-125"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
